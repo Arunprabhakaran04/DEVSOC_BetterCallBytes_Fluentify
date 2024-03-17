@@ -15,4 +15,19 @@ def get_ip(request):
         ip = request.META.get('REMOTE_ADDR')
     return ip
 
+#To schedule a class
+
+def schedule_class(**kwargs):
+    url = "https://api.zoom.us/v2/users/me/meetings"
+    API_KEY = "YfNJ2iJqTsSa3o106aqAEg"
+    API_SECRET = "Zlzpx95XWIviT3aAaXKCtDa7Zj1owUf8"
+    data = {
+    "topic": "My New Meeting",
+    "start_time": giventime.isoformat(),
+    "duration": 60,  # Duration in minutes
+    "timezone": "Asia/Chennai",  
+    "agenda": "My Meeting Agenda",
+}
+    
+    
 
