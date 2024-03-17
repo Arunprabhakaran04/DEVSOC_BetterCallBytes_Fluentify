@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tutor Login Page</title>
+  {% load static %}
   <style>
     /* Define the color scheme */
     :root {
-      --primary-color: #1E90FF; /* blue */
+      --primary-color: #3A5AFF; /* blue */
       --secondary-color: #FFFFFF; /* white */
       --tertiary-color: #808080; /*grey*/
     }
     /* Style the body */
     body {
-      background-color: var(--secondary-color);
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    background-color: var(--secondary-color);
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%), url("{% static 'resources/frame1.png' %}");
+    background-size: cover;
+}
+
     /* Style the container */
     .container {
       display: flex;
