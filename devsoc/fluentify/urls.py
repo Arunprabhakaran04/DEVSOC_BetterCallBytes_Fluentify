@@ -33,8 +33,8 @@ urlpatterns = [
     path('logout/',log.logout,name='logout'),
 
 
-    path('teacher/dashboard/add_language/',teacher.add_language,name="Add Language"),
-    path('teacher/dashboard/add_language/process/',teacher.add_language_process,name="Add_Language_Process"),
+    path('teacher/dashboard/add_course/',teacher.add_course,name="Add Language"),
+    path('teacher/dashboard/add_course/process/',teacher.add_course_process,name="Add_Language_Process"),
     path('teacher/dashboard/add_class/',teacher.add_class,name="Add_Class"),
     path('teacher/dashboard/add_class/process/',teacher.add_class_process,name="Add Class Process"),
 
