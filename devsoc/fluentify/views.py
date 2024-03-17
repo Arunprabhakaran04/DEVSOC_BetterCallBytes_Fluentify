@@ -2,6 +2,7 @@ from datetime import date
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+import requests
 
 
 
@@ -13,3 +14,5 @@ def get_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+
