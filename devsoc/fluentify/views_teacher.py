@@ -101,3 +101,4 @@ def show_courses(request):
     
     content = {}
     return HttpResponse(template.render(content,request))
+
