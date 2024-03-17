@@ -82,6 +82,7 @@ def login_check_teacher(request):
     message[views.get_ip(request)] = 'Wrong Credentials!!'
     return HttpResponseRedirect('/teacher')
 
+
 def logout(request):
     global details,message
     try:
