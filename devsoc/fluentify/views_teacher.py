@@ -90,3 +90,14 @@ def add_class_process(request):
     classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
     classes_.save()
     return HttpResponseRedirect('/teacher/dashboard/')
+
+def show_courses(request):
+    template = loader.get_template('show_courses_tutor.html')
+    ip = views.get_ip(request)
+    try:
+        ID = views_login.dets()[ip][1]
+    except KeyError:
+        return HttpResponseRedirect('/')
+    
+    content = {}
+    return HttpResponse(template.render(content,request))

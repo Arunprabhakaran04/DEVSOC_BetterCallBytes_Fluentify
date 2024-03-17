@@ -35,7 +35,7 @@ urlpatterns = [
     path('teacher/dashboard/add_review/process/',student.add_review_process,name="Add Review Process"),
     path('teacher/dashboard/',teacher.dashboard,name="Teacher_Dashboard"),
     path('teacher/dashboard/logout/',log.logout,name='logout'),
-
+    path('teacher/dashboard/show_course/',teacher.show_courses,name="Show_Courses"),
     path('teacher/dashboard/add_course/',teacher.add_course,name="Add Course"),
     path('teacher/dashboard/add_course/process/',teacher.add_course_process,name="Add_Course_Process"),
     path('teacher/dashboard/add_class/',teacher.add_class,name="Add_Class"),
