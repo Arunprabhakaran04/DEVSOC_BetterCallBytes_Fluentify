@@ -148,8 +148,8 @@
     <header>
         <nav>
             <div class="logo">
-                <img id="logo" src="temp_resources/Logo.svg" alt="">
-                <img id="Fluentify" src="temp_resources/Fluentify.svg" alt="">
+                <img id="logo" src="{% static 'resources/Logo.svg' %}" alt="">
+                <img id="Fluentify" src="{% static 'resources/Fluentify.svg' %}" alt="">
             </div>
             <div class="right">
 
@@ -176,19 +176,19 @@
                 <h1>Make Learning Languages fun!</h1>
                 <h3>Learn any language, on your fingertips!</h3>
                 <div class="select">
-                    <div class="tutor">Tutor</div>
-                    <div class="student">Student</div>
+                    <a href="/teacher/"><div class="tutor">Tutor</div></a>
+                    <a href="/student/"><div class="student">Student</div></a>
                 </div>
             </div>
             <div class="left_box">
-                <img id="miroodles" src="temp_resources/Miroodles Color Composition.svg" alt="">
+                <img id="miroodles" src="{% static 'resources/Miroodles Color Composition.svg' %}" alt="">
             </div>
         </div>
         <div class="main_box2">
             <h1>Who is Fleuntify for?</h1>
             <div class="bahane">
                 <div class="students">
-                    <img src="temp_resources/icon.svg" alt="">
+                    <img src="{% static 'resources/icon.svg' %}" alt="">
                     <h2>Students</h2>
                     <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est, quas laudantium veritatis saepe!
                     </h4>
@@ -196,7 +196,7 @@
 
                 </div>
                 <div class="enthusiasts">
-                    <img src="temp_resources/icon2.svg" alt="">
+                    <img src="{% static 'resources/icon2.svg' %}" alt="">
                     <h2>Enthusiasts</h2>
                     <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est, quas laudantium veritatis saepe!
                     </h4>
@@ -204,7 +204,7 @@
 
                 </div>
                 <div class="polyglot">
-                    <img  src="temp_resources/icon3.svg" alt="">
+                    <img  src="{% static 'resources/icon3.svg' %}" alt="">
                     <h2>Polyglots</h2>
                     <h4 style="margin: 30px; opacity: 0.7;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptate voluptatibus deserunt vero, enim eveniet culpa harum mollitia quasi voluptatem.
                     </h4>
