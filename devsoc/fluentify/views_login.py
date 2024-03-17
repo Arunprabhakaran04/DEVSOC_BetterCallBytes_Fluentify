@@ -130,15 +130,15 @@ def edit_register_student(request):
 def edit_register_process_student(request,u_id):
     return HttpResponseRedirect('/student/dashboard/')
 
-def edit_register_teacher(request,u_id):
-    ip = views.get_ip(request)
-    template = loader.get_template('register_edit_teacher.html')
-    acc = TCreds.objects.get(teacher_id=details[ip][0])
-    content = {
-        'Acc':acc,
-    }
-    return HttpResponse(template.render(content,request))
+# def edit_register_teacher(request,u_id):
+#     ip = views.get_ip(request)
+#     template = loader.get_template('register_edit_teacher.html')
+#     acc = TCreds.objects.get(teacher_id=details[ip][0])
+#     content = {
+#         'Acc':acc,
+#     }
+#     return HttpResponse(template.render(content,request))
 
-def edit_register_process_teacher(request,u_id):
-    return HttpResponseRedirect('/teacher/dashboard/')
+# def edit_register_process_teacher(request,u_id):
+#     return HttpResponseRedirect('/teacher/dashboard/')
 
