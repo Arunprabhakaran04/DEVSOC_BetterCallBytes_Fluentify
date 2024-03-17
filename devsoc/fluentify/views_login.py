@@ -63,7 +63,7 @@ def login_check_student(request):
 
             return HttpResponseRedirect('/student/dashboard/')
     message[views.get_ip(request)] = 'Wrong Credentials!!'
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/student')
 
 def login_check_teacher(request):
     global usr,nme,details,message,unt
@@ -80,7 +80,7 @@ def login_check_teacher(request):
             
             return HttpResponseRedirect('/teacher/dashboard')
     message[views.get_ip(request)] = 'Wrong Credentials!!'
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/teacher')
 
 def logout(request):
     global details,message

@@ -38,7 +38,33 @@ def add_course(request):
     return HttpResponse(template.render(content,request))
 
 def add_course_process(request):
-    return
+    ip = views.get_ip(request)
+    try:
+        ID = views_login.dets()[ip][1]
+    except KeyError:
+        return HttpResponseRedirect('/')
+    
+    Coursename = request.POST['']
+    Lang = request.POST['']
+    Prof = request.POST['']
+    Price = request.POST['']
+    Tim = request.POST['']
+    Dt = request.POST['']
+    course_ = Course(Course_name=Coursename,Teacher_ID=ID,Language=Lang,Proficiency=Prof,Price=Price)
+    course_.save()
+    return HttpResponseRedirect('/teacher/dashboard/')
+def course_details(request):
+    template = loader.get_template('course_details.html')
+    ip = views.get_ip(request)
+    try:
+        ID = views_login.dets()[ip][1]
+    except KeyError:
+        return HttpResponseRedirect('/')
+    teacher_courses = Course.objects.all().filter(Teacher_ID=ID).values()
+    content = {
+        'courses' : teacher_courses,
+    }
+    return HttpResponse(template.render(content,request))
 
 def add_class(request):
     template = loader.get_template('add_class.html')
@@ -53,11 +79,14 @@ def add_class(request):
 
 def add_class_process(request):
     ip = views.get_ip(request)
-    Lang = request.POST['']
-    Pr = request.POST['']
+    try:
+        name = views_login.dets()[ip][0]
+    except KeyError:
+        return HttpResponseRedirect('/')
+    
+    Courseid = request.POST['']
     Tim = request.POST['']
     Dt = request.POST['']
-    Teach = views_login.dets()[ip][0]
-    classes_ = Classes(Language=Lang,Price=Pr,Timing=Tim,Class_Date=Dt,Teacher=Teach)
+    classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
     classes_.save()
     return HttpResponseRedirect('/teacher/dashboard/')

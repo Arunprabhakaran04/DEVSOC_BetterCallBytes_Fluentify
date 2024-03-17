@@ -39,8 +39,8 @@ class Course(models.Model):
     Language = models.CharField(max_length=255,blank=False,default="-")
     Proficiency = models.CharField(max_length=255,blank=False,default="Elementry")
     Price = models.CharField(max_length=255,blank=False,default="0")
-    Students = models.CharField(max_length=255,blank=False,default="0",auto_created=True)
-    
+    Students = models.IntegerField(blank=False,default=0,auto_created=True)
+
 class Reviews(models.Model):
     Review_ID = models.AutoField(blank=False,unique=True,primary_key=True,auto_created=True)
     Student_ID = models.CharField(max_length=255,blank=False)
