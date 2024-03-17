@@ -97,34 +97,44 @@
 
         .time_table {
             background-color: rgb(246, 255, 253);
+            padding: 10px;
             width: 70vw;
-            height: 300px;
+            height: 320px;
             margin: 10px auto;
-            border-radius: 30px;
-            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
             /* Enable horizontal scrolling for small screens */
         }
 
         table {
             width: 100%;
-            border-collapse: collapse;
+            /* display: flex; */
+            /* justify-content: space-around;
+            align-items: center; */
+            /* flex-wrap: wrap; */
         }
 
         th,
         td {
-            border: 1px solid #ccc;
-            padding: 5px;
+            border: 1px solid black;
+            background-color: peachpuff;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 5px;
             text-align: center;
         }
 
         .time_slot {
             margin: 2px;
-
             width: 10%;
             /* Adjust as needed */
             height: 30px;
             /* Adjust as needed */
-            background-color: #ccc;
+            background-color: #c1f0ff;
+            border-radius: 30px;
+
         }
 
 
@@ -166,36 +176,42 @@
                 display: none;
             }
         }
-        .logout{
+
+        .logout {
             background-color: rgb(213, 228, 243);
             border-radius: 20px;
             padding: 10px;
         }
-        .boxes:hover{
+
+        .boxes:hover {
             cursor: pointer;
             width: 40px;
             height: 40px;
             border-radius: 10px;
         }
-        .boxes{
+
+        .boxes {
             width: 40px;
             height: 40px;
             border-radius: 10px;
         }
-        #user{
-            width:60px
+
+        #user {
+            width: 60px
         }
-        .flashcard{
+
+        .flashcard {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
             background-color: rgb(246, 255, 253);
-            height:200px;
+            height: 200px;
             width: 150px;
             border-radius: 30px;
             background-color: #ccc;
         }
+
         ol {
             word-wrap: break-word;
         }
@@ -219,7 +235,7 @@
         <aside>
             <div class="MyInfo">
                 <img src="{% static 'resources/user.png' %}" id="user" alt="">
-                <span>ID: {{Acc.teacher_id}}<br></span>
+                <span style="text-align: center;">Email: <br> {{Acc.email}}<br></span>
                 <span>Name: {{Acc.name}}</span>
                 <div class="flashcard">
                     <h3>Today's Classes</h3>
@@ -231,8 +247,10 @@
         <article>
             <section>
                 <div class="meet"><img src="{% static 'resources/web.png' %}" class="boxes" alt="">JOIN CLASS</div>
-                <div class="add_course"><a href="add_class/"><img src="{% static 'resources/Plus.jpeg' %}" class="boxes"  alt=""></a><span>Add Class</span></div>
-                <div class="upload_resources"><a href="add_language/"><img src="{% static 'resources/book2.png' %}" class="boxes" alt=""></a><span>Add Language Proficiency</span></div>
+                <div class="add_course"><a href="add_class/"><img src="{% static 'resources/Plus.jpeg' %}" class="boxes"
+                            alt=""></a><span>Add Class</span></div>
+                <div class="upload_resources"><a href="add_language/"><img src="{% static 'resources/book2.png' %}"
+                            class="boxes" alt=""></a><span>Add Language Proficiency</span></div>
             </section>
             <section>
                 <div class="time_table">
@@ -240,8 +258,17 @@
                         <thead>
                             <tr>
                                 <th></th>
-                                <th colspan="4">Morning (8am - 12pm)</th>
-                                <th colspan="6">Afternoon (2pm - 8pm)</th>
+                                <th>8AM</th>
+                                <th>9AM</th>
+                                <th>10AM</th>
+                                <th>11AM</th>
+                                <th>2PM</th>
+                                <th>3PM</th>
+                                <th>4PM</th>
+                                <th>5PM</th>
+                                <th>6PM</th>
+                                <th>7PM</th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -327,6 +354,10 @@
             </span>
         </div>
     </footer>
+    <script>
+        
+
+    </script>
 </body>
 
 </html>

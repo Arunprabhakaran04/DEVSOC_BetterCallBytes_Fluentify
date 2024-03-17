@@ -2,6 +2,9 @@ from datetime import date
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from . import views_student
+from . import views_teacher
+from . import views_login
 
 
 
