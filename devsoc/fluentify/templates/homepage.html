@@ -71,7 +71,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width:250px;
+            width: 250px;
         }
 
         .tutor,
@@ -86,7 +86,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
 
         @media only screen and (max-width: 768px) {}
 
@@ -96,42 +96,51 @@
 
         #Fluentify {
             width: 150px;
+            padding: 5px;
         }
 
         #miroodles {
             width: 35vw;
         }
-        div h1{
+
+        div h1 {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             font-size: 50px;
         }
-        div h3{
+
+        div h3 {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             font-size: 20px;
         }
-        .main_box2{
+
+        .main_box2 {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #F2F2F2;
         }
+
         a {
             text-decoration: none;
         }
-        .bahane{
+
+        .bahane {
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 5px;
-            margin:10px;
+            margin: 10px;
         }
-        .students,.enthusiasts,.polyglot{
-            display:flex;
+
+        .students,
+        .enthusiasts,
+        .polyglot {
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -140,10 +149,65 @@
             border-radius: 15px;
             height: 60vh;
             width: 250px;
-            padding:10px;
+            padding: 10px;
 
         }
-        
+
+        .main_box_three {
+            background-color: #3A5AFF;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo_last {
+            display: flex;
+            flex-direction: column;
+            color: #F2F2F2;
+            margin-left: 10vh;
+        }
+
+        #about_us {
+            display: flex;
+            color: #F2F2F2;
+            padding: 25px;
+            font-size: 20px;
+        }
+        .adjuster{
+            display: flex;
+            justify-content: right;
+            width: 60vw;
+            margin-left: 15vw;
+            
+        }
+        .curves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .curve {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: url("{% static 'resources/curve.svg' %}") repeat-x;
+            animation: wave 5s linear infinite alternate;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 
@@ -157,12 +221,15 @@
             <div class="right">
 
                 <ul>
-                    <li><span style="font-size: large;">About Us </span><svg width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
-                                stroke="#141B34" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <li>
+                        <a id="about_us_link" href="#"><span style="font-size: large;">About Us </span><svg width="20"
+                                height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6 9L11.2929 14.2929C11.6262 14.6262 11.7929 14.7929 12 14.7929C12.2071 14.7929 12.3738 14.6262 12.7071 14.2929L18 9"
+                                    stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
                     </li>
                     <li>
                         <img style="size: 100px;"
@@ -179,8 +246,12 @@
                 <h1>Make Learning Languages fun!</h1>
                 <h3>Learn any language, on your fingertips!</h3>
                 <div class="select">
-                    <a href="/teacher/"><div class="tutor">Tutor</div></a>
-                    <a href="/student/"><div class="student">Student</div></a>
+                    <a href="/teacher/">
+                        <div class="tutor">Tutor</div>
+                    </a>
+                    <a href="/student/">
+                        <div class="student">Student</div>
+                    </a>
                 </div>
             </div>
             <div class="left_box">
@@ -193,7 +264,9 @@
                 <div class="students">
                     <img src="{% static 'resources/icon.svg' %}" alt="">
                     <h2>Students</h2>
-                    <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est, quas laudantium veritatis saepe!
+                    <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est,
+                        quas laudantium veritatis saepe!
                     </h4>
                     <h4>Learn More</h4>
 
@@ -201,21 +274,58 @@
                 <div class="enthusiasts">
                     <img src="{% static 'resources/icon2.svg' %}" alt="">
                     <h2>Enthusiasts</h2>
-                    <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est, quas laudantium veritatis saepe!
+                    <h4 style="margin: 20px; opacity: 0.7;">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        Nisi impedit illo minima deserunt eligendi temporibus accusamus commodi similique qui totam est,
+                        quas laudantium veritatis saepe!
                     </h4>
                     <h4>Learn More</h4>
 
                 </div>
                 <div class="polyglot">
-                    <img  src="{% static 'resources/icon3.svg' %}" alt="">
+                    <img src="{% static 'resources/icon3.svg' %}" alt="">
                     <h2>Polyglots</h2>
-                    <h4 style="margin: 30px; opacity: 0.7;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptate voluptatibus deserunt vero, enim eveniet culpa harum mollitia quasi voluptatem.
+                    <h4 style="margin: 30px; opacity: 0.7;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+                        voluptate voluptatibus deserunt vero, enim eveniet culpa harum mollitia quasi voluptatem.
                     </h4>
                     <h4>Learn More</h4>
                 </div>
             </div>
+            <div class="curves">
+                <div class="curve"></div>
+            </div>
+        </div>
+        <div class="main_box_three">
+            <div class="logo_last">
+                <img id="logo" src="{% static 'resources/Logo.svg' %}" alt="">
+                <img id="Fluentify" src="{% static 'resources/Fluentify.svg' %}" alt="">
+                <H1>About Us</H1>
+            </div>
+            <div class="adjuster">
+                <div id="about_us" class="main_box3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero repudiandae necessitatibus qui
+                    explicabo ut nulla voluptates quod magnam quis temporibus, aperiam ab non ducimus dignissimos aut
+                    unde quo vitae ex. Assumenda dolores laborum velit alias ipsam iste id totam suscipit distinctio,
+                    nesciunt molestias, minus ex voluptatibus excepturi eveniet a numquam ut officiis quibusdam? Laborum
+                    mollitia, obcaecati, non soluta quae quidem iure temporibus dolorum fugit eos voluptatibus! Officia
+                    quos cumque quo quasi ad praesentium suscipit numquam accusantium minus totam sequi assumenda nisi
+                    ullam, impedit velit inventore aliquid nam, consectetur iusto omnis facilis dicta, quis sapiente
+                    sunt? Blanditiis suscipit reprehenderit eos. Dolorem.
+                </div>
+            </div>
         </div>
     </main>
+    <script>
+        // JavaScript to scroll to About Us section when clicked on About Us link
+        document.addEventListener("DOMContentLoaded", function () {
+            const aboutUsLink = document.querySelector('#about_us_link');
+            const aboutUsSection = document.querySelector('#about_us');
+
+            aboutUsLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 
 </body>
 
