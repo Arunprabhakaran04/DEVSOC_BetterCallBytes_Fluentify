@@ -1,2 +1,6 @@
 
 devsoc/db.sqlite3
+*.sqlite3
+/devsoc/devsoc/__pycache__
+/devsoc/fluentify/__pycache__
+/devsoc/fluentify/migrations/__pycache__
