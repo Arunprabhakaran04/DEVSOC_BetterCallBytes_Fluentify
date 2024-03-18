@@ -102,6 +102,7 @@
     <div class="container">
         <h1 class="title">Add Course</h1>
         <form action="process/" method="post">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="courseName">Course Name</label>
                 <input type="text" id="courseName" name="courseName" maxlength="100" required>
