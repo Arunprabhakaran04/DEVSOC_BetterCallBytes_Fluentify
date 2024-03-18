@@ -163,6 +163,11 @@
             </table>
             <button type="submit" class="btn">Add Course</button>
             <p id="errorMsg" class="error"></p>
+
+            <input type="text" hidden value="0" id="classes">
+            <input type="text" hidden value="" id="time">
+            <input type="text" hidden value="" id="day">
+
         </form>
     </div>
 
@@ -206,6 +211,7 @@
                 scheduleBody.appendChild(newRow);
 
                 serialNumber++;
+                console.log(time_table);
             });
 
             // Event listener for remove button
@@ -216,7 +222,24 @@
                     event.target.parentElement.parentElement.remove();
                 }
             });
+        var counter = document.getElementById("classes");
+        counter.value = serialNumber;
+        var dayz = '';
+        var timz = ''
+        for (i in time_table) {
+            dayz += time_table[i].day;
+            timz += time_table[i].time;
+            dayz += ",";
+            timz += ",";
+        }
+        var obj_time = document.getElementById("time")
+        obj.value = timz;
+        var obj_day = document.getElementById("day")
+        obj.value = dayz;
+
         });
+        
+
     </script>
 </body>
 
