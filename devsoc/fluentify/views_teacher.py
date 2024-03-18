@@ -48,10 +48,15 @@ def add_course_process(request):
     Lang = request.POST['']
     Prof = request.POST['']
     Price = request.POST['']
-    Tim = request.POST['']
-    Dt = request.POST['']
     course_ = Course(Course_name=Coursename,Teacher_ID=ID,Language=Lang,Proficiency=Prof,Price=Price)
     course_.save()
+    Courseid = Course.objects.get(Course_name=Coursename,Teacher_ID=ID).Course_ID
+    no = request.POST['']
+    for i in range(0,no):
+        Tim = request.POST['']
+        Dt = request.POST['']
+        classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
+        classes_.save()
     return HttpResponseRedirect('/teacher/dashboard/')
 def course_details(request):
     template = loader.get_template('course_details.html')
@@ -66,30 +71,30 @@ def course_details(request):
     }
     return HttpResponse(template.render(content,request))
 
-def add_class(request):
-    template = loader.get_template('add_class.html')
-    ip = views.get_ip(request)
-    try:
-        name = views_login.dets()[ip][0]
-    except KeyError:
-        return HttpResponseRedirect('/')
+# def add_class(request):
+#     template = loader.get_template('add_class.html')
+#     ip = views.get_ip(request)
+#     try:
+#         name = views_login.dets()[ip][0]
+#     except KeyError:
+#         return HttpResponseRedirect('/')
     
-    content = {}
-    return HttpResponse(template.render(content,request))
+#     content = {}
+#     return HttpResponse(template.render(content,request))
 
-def add_class_process(request):
-    ip = views.get_ip(request)
-    try:
-        name = views_login.dets()[ip][0]
-    except KeyError:
-        return HttpResponseRedirect('/')
+# def add_class_process(request):
+#     ip = views.get_ip(request)
+#     try:
+#         name = views_login.dets()[ip][0]
+#     except KeyError:
+#         return HttpResponseRedirect('/')
     
-    Courseid = request.POST['']
-    Tim = request.POST['']
-    Dt = request.POST['']
-    classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
-    classes_.save()
-    return HttpResponseRedirect('/teacher/dashboard/')
+#     Courseid = request.POST['']
+#     Tim = request.POST['']
+#     Dt = request.POST['']
+#     classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
+#     classes_.save()
+#     return HttpResponseRedirect('/teacher/dashboard/')
 
 def show_courses(request):
     template = loader.get_template('show_courses_tutor.html')
