@@ -38,23 +38,29 @@ def add_course(request):
     return HttpResponse(template.render(content,request))
 
 def add_course_process(request):
+    print(dict(request.POST.items()))
+    return HttpResponseRedirect('/')
     ip = views.get_ip(request)
     try:
         ID = views_login.dets()[ip][1]
     except KeyError:
         return HttpResponseRedirect('/')
     
-    Coursename = request.POST['']
-    Lang = request.POST['']
-    Prof = request.POST['']
-    Price = request.POST['']
+    Coursename = request.POST['courseName']
+    Lang = request.POST['language']
+    Prof = request.POST['level']
+    Price = request.POST['price']
     course_ = Course(Course_name=Coursename,Teacher_ID=ID,Language=Lang,Proficiency=Prof,Price=Price)
     course_.save()
     Courseid = Course.objects.get(Course_name=Coursename,Teacher_ID=ID).Course_ID
-    no = request.POST['']
+    no = request.POST['classes']
+    tim = request.POST['time']
+    dat = request.POST['date']
+    tim = tim.split(',')
+    dat = dat.split(',')
     for i in range(0,no):
-        Tim = request.POST['']
-        Dt = request.POST['']
+        Tim = tim[i]
+        Dt = dat[i]
         classes_ = Classes(Timing=Tim,Class_Date=Dt,Course_ID=Courseid)
         classes_.save()
     return HttpResponseRedirect('/teacher/dashboard/')

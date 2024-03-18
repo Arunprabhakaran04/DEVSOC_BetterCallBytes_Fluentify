@@ -38,8 +38,8 @@ urlpatterns = [
     path('teacher/dashboard/show_course/',teacher.show_courses,name="Show_Courses"),
     path('teacher/dashboard/add_course/',teacher.add_course,name="Add Course"),
     path('teacher/dashboard/add_course/process/',teacher.add_course_process,name="Add_Course_Process"),
-    path('teacher/dashboard/add_class/',teacher.add_class,name="Add_Class"),
-    path('teacher/dashboard/add_class/process/',teacher.add_class_process,name="Add Class Process"),
+    # path('teacher/dashboard/add_class/',teacher.add_class,name="Add_Class"),
+    # path('teacher/dashboard/add_class/process/',teacher.add_class_process,name="Add Class Process"),
 
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
